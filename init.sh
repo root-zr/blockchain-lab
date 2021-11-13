@@ -72,10 +72,15 @@ cp ./organizations/peerOrganizations/org2.example.com/connection-org2.json app/e
 cp ./organizations/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem app/example02_java/profiles/Org1/tls/
 cp ./organizations/peerOrganizations/org2.example.com/ca/ca.org2.example.com-cert.pem app/example02_java/profiles/Org2/tls/
 
-cp ./organizations/peerOrganizations/org1.example.com/connection-org1.json app/example03_java/profiles/Org1/connection.json
-cp ./organizations/peerOrganizations/org2.example.com/connection-org2.json app/example03_java/profiles/Org2/connection.json
-cp ./organizations/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem app/example03_java/profiles/Org1/tls/
-cp ./organizations/peerOrganizations/org2.example.com/ca/ca.org2.example.com-cert.pem app/example03_java/profiles/Org2/tls/
+
+
+
+cp ./organizations/peerOrganizations/org1.example.com/connection-org1.json app/soul-diamonds-back/profiles/Org1/connection.json
+cp ./organizations/peerOrganizations/org2.example.com/connection-org2.json app/soul-diamonds-back/profiles/Org2/connection.json
+cp ./organizations/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem app/soul-diamonds-back/profiles/Org1/tls/
+cp ./organizations/peerOrganizations/org2.example.com/ca/ca.org2.example.com-cert.pem app/soul-diamonds-back/profiles/Org2/tls/
+
+
 
 echo
 
