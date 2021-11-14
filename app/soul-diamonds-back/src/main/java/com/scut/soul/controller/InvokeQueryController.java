@@ -3,6 +3,7 @@ package com.scut.soul.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.scut.soul.common.dto.LaunchTXDto;
+import com.scut.soul.common.dto.SendToChain;
 import com.scut.soul.common.lang.Result;
 import com.scut.soul.entity.User;
 import com.scut.soul.service.UserService;
@@ -27,16 +28,24 @@ public class InvokeQueryController {
 
     @GetMapping("/query/{key}")
     @ResponseBody
-    public Object query(@PathVariable("key") String key) throws Exception {
+    public Result query(@PathVariable("key") String key) throws Exception {
 
         String res = invokeQuery.query("getValue", key);
 
         if (res.equals("")) {
-            return res;
+            return Result.succ(new ArrayList());
         }
 
         ArrayList arrayList = JSONObject.parseObject(res, ArrayList.class);
-        return arrayList;
+
+
+        ArrayList returnToApp = new ArrayList();
+        for(Object item:arrayList){
+
+            returnToApp.add( JSONObject.parseObject(String.valueOf(item)));
+            System.out.println("item: " + item.toString());
+        }
+        return Result.succ(returnToApp);
 
 
     }
